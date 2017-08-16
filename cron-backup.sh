@@ -29,6 +29,9 @@ if [ ! -d "$BACKUP_DIR" ]; then
 # Remove original SQL dump
   rm -f $TEMP_BACKUP
 
+# Copy Wordpress folder
+  ./wordpress-backup.sh
+
 # Add to Git and commit
   ${GIT} add -A
   ${GIT} commit -m "Automatic backup - $FULLDATE"
