@@ -1,7 +1,7 @@
 #!/bin/sh
 # Set variables
-DB_NAME="foo"
-CRON_USER="bar"
+DB_NAME="wordpress"
+CRON_USER="cron"
 
 FULLDATE=$(date +"%Y-%d-%m %H:%M")
 NOW=$(date +"%Y-%m-%d-%H-%M")
