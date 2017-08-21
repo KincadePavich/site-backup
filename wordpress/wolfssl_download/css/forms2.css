@@ -1,0 +1,169 @@
+/*---------- TAGS ---------- */
+
+p {
+    margin: 10px !important;
+    text-align: left !important;
+}
+
+/* ------- TYPOGRAPHY ------- */
+
+.header_section{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+	color: #CA651F;
+    text-align: left !important;
+    padding: 5px;
+}
+
+.intro_text{ color:#5F5E5F; }
+.intro_text a:link{ color: #CA651F; text-decoration:none;}
+.intro_text a:visited{ color: #CA651F; text-decoration:none;}
+.intro_text a:hover { color: #5E5E5F; text-decoration:underline;}
+.intro_text a:active { color: #CA651F; text-decoration:none;}
+
+.subtext{
+	color:#888; 
+	font-size:8pt; 
+	margin-left:10px;
+}
+
+.form_hint {
+  color: #999;
+  padding: 10px 12px;
+  font-size: 7.5pt;
+}
+
+.product{
+	font-size: 12px;
+	font-weight: bold;
+	color: #000;
+}
+
+.textbody { font-size: 8pt; color: #666; }
+.textproduct{ margin-left:5em; font-size:8pt; color:#000; }
+.date { color: #999; }
+
+.pagename{
+	text-align: right;
+}
+
+.titletext{
+	font-size: 1.5em;
+	color: #19CDD8;
+	margin-right: 15px;
+}
+
+.bluetext{
+	font-size: 2.5em;
+	color: #333;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#com_alert{
+	margin-left: 85px;
+	font-size: 0.9em;
+	color: #A61F11;
+}
+
+#file_alert{
+	margin-left: 0px;
+	font-size: 0.9em;
+	color: #A61F11;
+}
+
+/* ------- FORM STYLES ------- */
+
+#formarea{ 
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	text-align: left; 
+}
+
+label {
+	width: 7em;
+	float: left;
+	text-align: right;
+	font-size: .8em;
+	margin-right: 0.5em;
+	padding-top: 6px;
+	display: block
+}
+
+.submit input {
+	margin-left: 6.6em;
+	background: #ccc;
+	padding: 5px 10px;
+	margin-top: 10px;
+}
+
+input {
+	color: #000;
+	background: #fff;
+	border: 1px solid #999;
+	padding: 4px;
+}
+
+.inerror{
+	border: 1px solid red;
+}
+
+input.submit{
+	background: #aaa;
+	border: 1px solid #000;
+	width: 200px;
+	height: 40px;
+}
+
+textarea { resize:none; width: 500px; }
+input.submit:hover { background: #ccc; }
+
+fieldset {
+	border: 1px solid #666;
+	background: #f0f0f0;
+}
+
+#footer{
+    display: none !important;
+}
+
+#sweepstakes {
+	border: 1px solid #666;
+	text-align: left;
+	background-color: #CCFFCC;
+}
+@media screen and (max-width: 710px) {
+    .container {
+        width: 90% !important;
+        margin: 0 10px;
+        padding: 0;
+    }
+    .center {
+        width: 90%;
+        margin: 0 auto;
+    }
+    fieldset {
+        width: 100% !important;
+        margin: 0 auto;
+        padding: 0;
+        min-width: 0;
+    }
+    textarea {
+        width: 90% !important;
+        margin: 5px 10px;
+    }
+    .textbody {
+        max-width: 90% !important;
+        word-wrap: break-word;
+        word-break: break-all;
+        margin: 15px;
+    }
+    iframe {
+        width: 90% !important;
+    }
+}
+@media screen and (max-width: 350px) {
+    input.text, input.title {
+        width: 80%;
+        margin: 5px 10px;
+    }
+}

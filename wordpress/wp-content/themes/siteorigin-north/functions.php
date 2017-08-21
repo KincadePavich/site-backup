@@ -388,11 +388,10 @@ require get_template_directory() . '/inc/siteorigin-panels.php';
 include get_template_directory() . '/woocommerce/functions.php';
 
 /**
-  * IFRAME RESIZER FUNCTIONS
+  * iFrame Resizer
   */
-function theme_name_scripts() {
-        wp_enqueue_script( 'script-name', get_template_directory_uri() . '/js/iframeResizer.min.js ', array(), '1.0.0', true );
-        wp_enqueue_script( 'script-name', get_template_directory_uri() . '/js/iframe.js ', array(), '1.0.0', true );
-    }
-
-add_action( 'wp_enqueue_scripts', 'theme_name_scripts' );
+function add_iframe_resizer() {
+	wp_register_script( 'iFrameResize', get_template_directory_uri() . '/js/iframeResizer.min.js' );
+	wp_enqueue_script ( 'iFrameResize' );
+}
+add_action( 'wp_enqueue_scripts', 'add_iframe_resizer' );

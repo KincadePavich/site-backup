@@ -114,8 +114,8 @@ Click to read more.</p>
         <div class="push"></div>
 			<div id="conferences">
 			<a href="https://www.mdcyber.com/events/fort-meade-cyber-day-2/" target="_blank"><img id="conf1" class="conf" src="http://test.wolfssl.com:8888/wordpress/wp-content/uploads/2017/08/cyberday-fortmeade.jpg" alt="IT Cyber Day at Fort Meade"></a>
-			<a href="http://techtrain.microchip.com/usmasters/home.aspx" target="_blank"><img id="conf2" class="conf" src="http://test.wolfssl.com:8888/wordpress/wp-content/uploads/2017/07/mastersConference.jpg" alt="Microchip Masters 2017"></a>
             <a href="https://www.iottechexpo.com/northamerica/" target="_blank"><img id="conf3" class="conf" src="http://test.wolfssl.com:8888/wordpress/wp-content/uploads/2017/08/IoT-tech-expo.png"></a>
+            <a href="http://www.sensorsmidwest.com/" target="_blank"><img id="conf2" class="conf" src="http://test.wolfssl.com:8888/wordpress/wp-content/uploads/2017/08/smw17.jpg" alt="Sensors Midwest 2017"></a>
 			</div>
 		</div><!-- .site-info -->
 
