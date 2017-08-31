@@ -1,0 +1,247 @@
+Client log:
+
+wolfSSL Entering SSL_library_init
+wolfSSL Entering wolfSSL_Init
+wolfSSL Entering wolfSSL_ERR_load_crypto_strings
+wolfSSL Entering wolfSSL_ERR_load_crypto_strings
+wolfSSL Entering wolfSSL_add_all_algorithms
+wolfSSL Entering wolfSSL_Init
+wolfSSL Entering WOLFSSL_CTX_new_ex
+wolfSSL Entering wolfSSL_CertManagerNew
+wolfSSL Leaving WOLFSSL_CTX_new, return 0
+wolfSSL Entering wolfSSL_CTX_use_certificate_chain_buffer signature type
+wolfSSL Entering GetExplicitVersion
+wolfSSL Entering GetMyVersion
+wolfSSL Entering GetSerialNumber
+Got Cert Header
+wolfSSL Entering GetAlgoId
+wolfSSL Entering GetObjectId()
+Got Algo wolfSSL Entering GetAlgoId
+wolfSSL Entering GetObjectId()
+Got Key
+Not ECDSA cert signature
+wolfSSL Entering wolfSSL_CTX_use_PrivateKey_buffer
+wolfSSL Entering PemToDer
+wolfSSL Entering GetMyVersion
+wolfSSL Entering wolfSSL_CTX_loaemToDer
+Adding a CA
+wolfSSL Entering GetExplicitVersion
+wolfSSL Entering GetMyVersion
+wolfSSL Entering GetSerialNumber
+Got Cert Header
+wolfSSL Entering GetAlgoId
+wolfSSL5
+Getting Cert Name
+Getting Cert Name
+Got Subject Name
+wolfSSL Entering GetAlgoId
+wolfSSL Entering GetObjectId()
+Got Key
+Parsed Past Key
+wolfSSL Entering DecodeCertExtensions
+wolfSSL Entering GetObjectwolfSSL Entering wolfSSL_CTX_set_verify
+wolfSSL Entering SSL_new
+wolfSSL Leaving SSL_new, return 0
+wolfSSL Entering SSL_set_fd
+wolfSSL Entering SSL_set_read_fd
+wolfSSL Leaving SSL_set_read_fd, return 1
+wolfSSL Entering SSL_set_write_fd
+wolfSSL Leaving SSL_set()
+growing output buffer
+
+Shrinking output buffer
+
+connect state: CLIENT_HELLO_SENT
+growing input buffer
+
+received record layer msg
+wolfSSL Entering DoHandShakeMsg()
+wolfSSL Entering DoHandShakeMsgType
+processing server hello
+wolfSSL Entering VerifyClientSuite
+wolfSSL Leaving DoHandShakeMsgType(), return 0
+wolfSSL Leaving DoHandShakeMsg(), return 0
+growing input buffer
+
+received record layer msg
+wolfSSL Entering DoHandShakeMsg()
+wolfSSL Entering DoHandShakeMsgType
+processing certificate
+Loading peer's cert chain
+	Put another cert into chain
+	Put another cert into chain
+wolfSSL Entering GetExplicitVersion
+woering GetAlgoId
+wolfSSL Entering GetObjectId()
+Got Algo ID
+Getting Cert Name
+Getting Cert Name
+Got Subject Name
+wolfSSL Entering GetAlgoId
+wolfSSL Enteringring GetObjectId()
+wolfSSL Entering DecodeSubjKeyId
+wolfSSL Entering GetObjectId()
+wolfSSL Entering DecodeAuthKeyId
+wolfSSL Entering GetObjectId()
+wolfSSL Entering DecodeBasicCaConstraint
+wolfSSL Entering rtwolfSSL Using RSA PKCSV15 padding
+Verified CA from chain and already had it
+Verifying Peer's cert
+wolfSSL Entering GetExplicitVersion
+wolfSSL Entering GetMyVersion
+wolfSSL Entering GetSerialNumber
+Got Cert Header
+wolfSSLwolfSSL Using RSA PKCSV15 padding
+Verified Peer's cert
+wolfSSL Leaving DoHandShakeMsgType(), return 0
+wolfSSL Leaving DoHandShakeMsg(), return 0
+received record layer msg
+wolfSSL Entering DoHandShakeMsg()
+wolfSSL Entering DoHandShakeMsgType
+processing server key exchange
+wolfSSL Entering DoServerKeyExchange
+wolfSSL Entering RsaVerify
+wolfSSL Using RSA PKCSV15 padding
+wolfSSL Leaving RsaVerify, return 51
+wolfSSL Leaving DoServerKeyExchange, return 0
+wolfSSL Leaving DoHandShakeMsgType(), return 0
+wolfSSL Leaving DoHandShakeMsg(), return 0
+received record layer msg
+wolfSSL Entering DoHandShakeMsg()
+wolfSSL Entering DoHandShakeMsgType
+processing certificate request
+wolfSSL Leaving DoHandShakeMsgType(), return 0
+wolfSSL Leaving DoHandShakeMsg(), return 0
+More messages in record
+received record layegrowing output buffer
+
+Shrinking output buffer
+
+wolfSSL Leaving SendClientKeyExchange, return 0
+sent: client key exchange
+connect state: FIRST_REPLY_SECOND
+wolfSSL Entering SendCertificateVerify
+growing output buffer
+
+Trying RSA client cert
+wolfSSL Entering GetMyVersion
+wolfSSL Entering RsaSign
+wolfSSL Leaving RsaSign, return 0
+wolfSSL Entering VerifyRsaSign
+wolfSSL Using RSA PKCSV15 padding
+wolfSSL Leaving VerifyRsaSign, return 0
+Shrinking output buffer
+
+wolfSSL Leaving SendCertificateVerify, return 0
+sent: certificate verify
+connect state: FIRST_REPLY_THIRD
+growing output buffer
+
+Shrinking output buffer
+
+sent: change cipher spec
+connect state: FIRST_REPLY_FOURTH
+growing output buffer
+
+Shrinking output buffer
+
+sent: finished
+connect state: FINISHED_DONE
+received record layer msg
+got ALERT!
+Got alert
+wolfSSL error occurred, error = 20
+wolfSSL error occurred, error = -313
+wolfSSL Entering SSL_get_error
+wolfSSL Leaving SSL_get_error, return -313
+wolfSSL Entering SSL_connect()
+ProcessReply retry in error state, not allowed
+wolfSSL error occurred, error = -313
+wolfSSL Entering SSL_get_error
+wolfSSL Leaving SSL_get_error, return -313
+wolfSSL Entering SSL_shutdown()
+wolfSSL Leaving SSL_shutdown(), return -1
+wolfSSL Entering SSL_free
+CTX ref count not 0 yet, no free
+Shrinking input buffer
+
+wolfSSL Entering wolfSSL_BIO_free
+wolfSSL Leaving SSL_free, return 0
+wolfSSL Entering SSL_CTX_free
+CTX ref count down to 0, doing full free
+wolfSSL Entering wolfSSL_CertManagerFree
+wolfSSL Leaving SSL_CTX_free, return 0
+
+---------------------------------------------------
+
+Server (Stunnel) log:
+
+
+2017.03.23 19:30:25 LOG7[main]: Running on Windows 6.2
+2017.03.23 19:30:25 LOG7[main]: No limit detected for the number of clients
+2017.03.23 19:30:25 LOG7[cron]: Cron thread initialized
+2017.03.23 19:30:25 LOG5[main]: stunnel 5.35 on x86-pc-msvc-1500 platform
+2017.03.23 19:30:25 LOG5[main]: Compiled/running with OpenSSL 1.0.2h-fips  3 May 2016
+2017.03.23 19:30:25 LOG5[main]: Threading:WIN32 Sockets:SELECT,IPv6 TLS:ENGINE,FIPS,OCSP,PSK,SNI
+2017.03.23 19:30:25 LOG7[main]: errno: (*_errno())
+2017.03.23 19:30:25 LOG7[ui]: GUI message loop initialized
+2017.03.23 19:30:25 LOG7[main]: Running on Windows 6.2
+2017.03.23 19:30:25 LOG5[main]: Reading configuration from file stunnel.conf
+2017.03.23 19:30:26 LOG5[main]: UTF-8 byte order mark detected
+2017.03.23 19:30:26 LOG5[main]: FIPS mode disabled
+2017.03.23 19:30:26 LOG7[main]: Compression disabled
+2017.03.23 19:30:26 LOG7[main]: Snagged 64 random bytes from C:/.rnd
+2017.03.23 19:30:26 LOG7[main]: Wrote 1024 new random bytes to C:/.rnd
+2017.03.23 19:30:26 LOG7[main]: PRNG seeded successfully
+2017.03.23 19:30:26 LOG6[main]: Initializing service [https]
+2017.03.23 19:30:26 LOG6[main]: Loading certificate from file: server-cert.pem
+2017.03.23 19:30:26 LOG6[main]: Certificate loaded from file: server-cert.pem
+2017.03.23 19:30:26 LOG6[main]: Loading private key from file: server-key.pem
+2017.03.23 19:30:26 LOG6[main]: Private key loaded from file: server-key.pem
+2017.03.23 19:30:26 LOG7[main]: Private key check succeeded
+2017.03.23 19:30:26 LOG7[main]: Client CA list: ca-cert.pem
+2017.03.23 19:30:26 LOG6[main]: Client CA: C=US, ST=Montana, L=Bozeman, O=Sawtooth, OU=Consulting, CN=www.wolfssl.com, emailAddress=info@wolfssl.com
+2017.03.23 19:30:26 LOG7[main]: DH initialization
+2017.03.23 19:30:26 LOG7[main]: Could not load DH parameters from server-cert.pem
+2017.03.23 19:30:26 LOG6[main]: Using dynamic DH parameters
+2017.03.23 19:30:26 LOG7[main]: ECDH initialization
+2017.03.23 19:30:26 LOG7[main]: ECDH initialized with curve prime256v1
+2017.03.23 19:30:26 LOG7[main]: SSL options: 0x03004004 (+0x03004000, -0x00000000)
+2017.03.23 19:30:26 LOG5[main]: Configuration successful
+2017.03.23 19:30:26 LOG7[main]: Listening file descriptor created (FD=488)
+2017.03.23 19:30:26 LOG7[main]: Option SO_EXCLUSIVEADDRUSE set on accept socket
+2017.03.23 19:30:26 LOG7[main]: Service [https] (FD=488) bound to 0.0.0.0:6460
+2017.03.23 19:31:26 LOG6[cron]: Executing cron jobs
+2017.03.23 19:31:26 LOG5[cron]: Updating DH parameters
+2017.03.23 19:34:22 LOG5[cron]: DH parameters updated
+2017.03.23 19:34:22 LOG6[cron]: Cron jobs completed in 176 seconds
+2017.03.23 19:34:22 LOG7[cron]: Waiting 86224 seconds
+2017.03.23 19:35:10 LOG7[main]: Found 1 ready file descriptor(s)
+2017.03.23 19:35:10 LOG7[main]: FD=488 ifds=r-x ofds=r--
+2017.03.23 19:35:10 LOG7[main]: Service [https] accepted (FD=520) from 85.76.139.164:58519
+2017.03.23 19:35:10 LOG7[main]: Creating a new thread
+2017.03.23 19:35:10 LOG7[main]: New thread created
+2017.03.23 19:35:10 LOG7[0]: Service [https] started
+2017.03.23 19:35:10 LOG7[0]: Option TCP_NODELAY set on local socket
+2017.03.23 19:35:10 LOG5[0]: Service [https] accepted connection from 85.76.139.164:58519
+2017.03.23 19:35:10 LOG6[0]: Peer certificate not required
+2017.03.23 19:35:10 LOG7[0]: SSL state (accept): before/accept initialization
+2017.03.23 19:35:11 LOG7[0]: SNI: no virtual services defined
+2017.03.23 19:35:11 LOG7[0]: SSL state (accept): SSLv3 read client hello A
+2017.03.23 19:35:11 LOG7[0]: SSL state (accept): SSLv3 write server hello A
+2017.03.23 19:35:11 LOG7[0]: SSL state (accept): SSLv3 write certificate A
+2017.03.23 19:35:11 LOG7[0]: SSL state (accept): SSLv3 write key exchange A
+2017.03.23 19:35:11 LOG7[0]: SSL state (accept): SSLv3 write certificate request A
+2017.03.23 19:35:11 LOG7[0]: SSL state (accept): SSLv3 flush data
+2017.03.23 19:35:11 LOG6[0]: Certificate verification disabled
+2017.03.23 19:35:11 LOG6[0]: Certificate verification disabled
+2017.03.23 19:35:11 LOG7[0]: SSL state (accept): SSLv3 read client certificate A
+2017.03.23 19:35:12 LOG7[0]: SSL state (accept): SSLv3 read client key exchange A
+2017.03.23 19:35:12 LOG7[0]: SSL state (accept): SSLv3 read certificate verify A
+2017.03.23 19:35:12 LOG7[0]: SSL alert (write): fatal: bad record mac
+2017.03.23 19:35:12 LOG3[0]: SSL_accept: 1408F119: error:1408F119:SSL routines:SSL3_GET_RECORD:decryption failed or bad record mac
+2017.03.23 19:35:12 LOG5[0]: Connection reset: 0 byte(s) sent to SSL, 0 byte(s) sent to socket
+2017.03.23 19:35:12 LOG7[0]: Deallocating application specific data for addr index
+2017.03.23 19:35:12 LOG7[0]: Local descriptor (FD=520) closed
+2017.03.23 19:35:12 LOG7[0]: Service [https] finished (0 left)
+

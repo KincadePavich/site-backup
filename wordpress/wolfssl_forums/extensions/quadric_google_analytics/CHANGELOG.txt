@@ -1,0 +1,12 @@
+Quadric Google Analytics for PunBB 1.4
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+15 Feb 2012, v1.0.1
+
+- Core:
+  . Compatibility for PunBB 1.4.2
+
+24 Dec 2011, v1.0.0
+
+- Core:
+  . First Release

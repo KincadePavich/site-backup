@@ -113,7 +113,6 @@ Click to read more.</p>
 		</div></div>
         <div class="push"></div>
 			<div id="conferences">
-			<a href="https://www.mdcyber.com/events/fort-meade-cyber-day-2/" target="_blank"><img id="conf1" class="conf" src="/wordpress/wp-content/uploads/2017/08/cyberday-fortmeade.jpg" alt="IT Cyber Day at Fort Meade"></a>
             <a href="https://www.iottechexpo.com/northamerica/" target="_blank"><img id="conf3" class="conf" src="/wordpress/wp-content/uploads/2017/08/IoT-tech-expo.png"></a>
             <a href="http://www.sensorsmidwest.com/" target="_blank"><img id="conf2" class="conf" src="/wordpress/wp-content/uploads/2017/08/smw17.jpg" alt="Sensors Midwest 2017"></a>
 			</div>

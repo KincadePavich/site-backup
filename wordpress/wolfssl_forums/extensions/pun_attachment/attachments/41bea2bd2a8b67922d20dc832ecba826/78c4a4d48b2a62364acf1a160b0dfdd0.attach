@@ -1,0 +1,66 @@
+Start
+IP 10.117.6.21
+wolfSSL Entering WOLFSSL_CTX_new_ex
+wolfSSL Entering wolfSSL_Init
+wolfSSL Entering wolfSSL_CertManagerNew
+wolfSSL Leaving WOLFSSL_CTX_new, return 0
+wolfSSL Entering wolfSSL_CTX_load_verify_buffer
+Adding a CA
+wolfSSL Entering GetExplicitVersion
+wolfSSL Entering GetMyVersion
+wolfSSL Entering GetSerialNumber
+Got Cert Header
+wolfSSL Entering GetAlgoId
+wolfSSL Entering GetObjectId()
+Got Algo ID
+Getting ert Name
+Getting Cert Name
+Got Subject Name
+wolfSSL Entering GetAlgoId
+wolfSSL Entering GetObjectId()
+Got Key
+Parsed Past Key
+wolfSSL Entering DecodeCertExtensions
+wolfSSL Entering GetObjectId()
+wolfSSL Entering DecodeKeyUsage
+wolfSSL Entering GetObjectId()
+wolfSSL Entering DecodeBasicCaConstraint
+wolfSSL Entering GetObjectId()
+wolfSSL Entering DecodeSubjKeyId
+wolfSSL Entering GetObjectId()
+wolfSSL Entering DecodeAuthKeyId
+wolfSSL Entering GetAlgoId
+wolfSSL Entering GetObjectId()
+    Parsed new CA
+    Freeing Parsed CA
+    Freeing der CA
+        OK Freeing der CA
+wolfSSL Leaving AddCA, return 0
+wolfSSL Entering SSL_new
+wolfSSL Leaving SSL_new, return 0
+wolfSSL Entering SSL_set_fd
+wolfSSL Entering SSL_set_read_fd
+wolfSSL Leaving SSL_set_read_fd, return 1
+wolfSSL Entering SSL_set_write_fd
+wolfSSL Leaving SSL_set_write_fd, return 1
+wolfSSL Entering wolfSSL_send()
+wolfSSL Entering SSL_write()
+handshake not complete, trying to finish
+wolfSSL Entering wolfSSL_negotiate
+wolfSSL Entering SSL_connect()
+growing output buffer
+
+Shrinking output buffer
+
+connect state: CLIENT_HELLO_SENT
+Embed receive connection closed
+wolfSSL error occurred, error = -308
+wolfSSL Leaving wolfSSL_negotiate, return -1
+wolfSSL Leaving SSL_write(), return -1
+wolfSSL Leaving wolfSSL_send(), return -1
+wolfSSL Entering SSL_get_error
+wolfSSL Leaving SSL_get_error, return -308
+sendRequest Error -- -103
+ Sock Error -308
+wolfSSL Entering ERR_error_string
+error state on socket

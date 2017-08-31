@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE extension SYSTEM "ext-1.0.dtd">
+
+<!--
+/**
+ * Google Analytics Integration.
+ * Extension for PunBB 1.4
+ *
+ * @copyright (C) 2011 quadric quadmachine@wp.pl
+ * @license http://www.gnu.org/licenses/gpl.html GPL version 2 or higher
+ * @package quadric_google_analytics
+ */
+-->
+
+<extension engine="1.0">
+    <id>quadric_google_analytics</id>
+    <title>Quadric Google Analytics</title>
+    <version>1.0.1</version>
+    <description>PunBB Integration of Google Analytics.</description>
+    <author>Quadric</author>
+    <minversion>1.4</minversion>
+    <maxtestedon>1.4.2</maxtestedon>
+    
+    <install><![CDATA[
+		forum_config_add('o_quadric_google_analytics_tracking_code', '');
+		forum_config_add('o_quadric_google_analytics_tracking_mode', '1');
+	]]></install>
+    
+    <uninstall><![CDATA[
+		forum_config_remove(array(
+			'o_quadric_google_analytics_tracking_code',
+			'o_quadric_google_analytics_tracking_mode'
+		));
+	]]></uninstall>
+    
+    <hooks>
+        <hook id="hd_head"><![CDATA[
+			if ( ! empty($forum_config['o_quadric_google_analytics_tracking_code'])) {
+				$analytics_tpl = 
+	'<script type="text/javascript">
+
+		var _gaq = _gaq || [];
+		_gaq.push([\'_setAccount\', \'' . $forum_config['o_quadric_google_analytics_tracking_code'] . '\']);
+		' . ($forum_config['o_quadric_google_analytics_tracking_mode'] >= 2 ? '_gaq.push([\'_setDomainName\', \'' . (count(explode('.', $_SERVER['HTTP_HOST'])) > 2 ? implode('.', array_slice(explode('.', $_SERVER['HTTP_HOST']), 1)) : $_SERVER['HTTP_HOST']) . '\']);' : null) . '
+		' . ($forum_config['o_quadric_google_analytics_tracking_mode'] == 3 ? '_gaq.push([\'_setAllowLinker\', true]);' : null) . '
+		_gaq.push([\'_trackPageview\']);
+
+		(function() {
+			var ga = document.createElement(\'script\'); ga.type = \'text/javascript\'; ga.async = true;
+			ga.src = (\'https:\' == document.location.protocol ? \'https://ssl\' : \'http://www\') + \'.google-analytics.com/ga.js\';
+			var s = document.getElementsByTagName(\'script\')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+
+	</script>';
+				
+				$tpl_main = str_replace('</head>', $analytics_tpl.'</head>', $tpl_main);
+			}
+		]]></hook>
+		
+		<hook id="aop_setup_personal_fieldset_end"><![CDATA[
+			if (file_exists($ext_info['path'].'/lang/'.$forum_user['language'].'/'.$ext_info['id'].'.php'))
+				include $ext_info['path'].'/lang/'.$forum_user['language'].'/'.$ext_info['id'].'.php';
+			else
+				include $ext_info['path'].'/lang/English/quadric_google_analytics.php';
+
+			$forum_page['group_count'] = $forum_page['item_count'] = 0;
+			?>
+			<div class="content-head">
+				<h2 class="hn"><span><?php echo $lang_quadric_google_analytics['Setup'] ?></span></h2>
+			</div>
+			<fieldset class="frm-group group<?php echo ++$forum_page['group_count'] ?>">
+				<div class="sf-set set<?php echo ++$forum_page['item_count'] ?>">
+					<div class="sf-box text">
+						<label for="fld<?php echo ++$forum_page['fld_count'] ?>">
+							<span><?php echo $lang_quadric_google_analytics['Tracker Code'] ?></span>
+							<small><?php echo $lang_quadric_google_analytics['Tracker Code help'] ?></small>
+						</label><br />
+						<span class="fld-input"><input type="text" id="fld<?php echo $forum_page['fld_count'] ?>" name="form[quadric_google_analytics_tracking_code]" size="50" maxlength="255" value="<?php echo forum_htmlencode($forum_config['o_quadric_google_analytics_tracking_code']) ?>" /></span>
+					</div>
+				</div>
+				
+				<div class="sf-set set<?php echo ++$forum_page['item_count'] ?>">
+					<div class="sf-box select">
+						<label for="fld<?php echo ++$forum_page['fld_count'] ?>"><span><?php echo $lang_quadric_google_analytics['Tracker Mode'] ?></span></label><br>
+						<span class="fld-input"><select name="form[quadric_google_analytics_tracking_mode]" id="fld<?php echo $forum_page['fld_count'] ?>">
+							<option value="1"<?php echo $forum_config['o_quadric_google_analytics_tracking_mode'] == 1 ? ' selected="selected"' : null ?>><?php echo $lang_quadric_google_analytics['Tracker Mode 1'] ?></option>
+							<option value="2"<?php echo $forum_config['o_quadric_google_analytics_tracking_mode'] == 2 ? ' selected="selected"' : null ?>><?php echo $lang_quadric_google_analytics['Tracker Mode 2'] ?></option>
+							<option value="3"<?php echo $forum_config['o_quadric_google_analytics_tracking_mode'] == 3 ? ' selected="selected"' : null ?>><?php echo $lang_quadric_google_analytics['Tracker Mode 3'] ?></option>
+						</select></span>
+					</div>
+				</div>
+			</fieldset>
+			<?php
+		]]></hook>
+    </hooks>
+</extension>

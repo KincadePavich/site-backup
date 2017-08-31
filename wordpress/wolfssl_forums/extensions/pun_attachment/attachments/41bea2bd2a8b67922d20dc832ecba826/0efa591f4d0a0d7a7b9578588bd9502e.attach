@@ -1,0 +1,94 @@
+#include "ViwiFileEncryption.h"
+#include "wolfssl/wolfcrypt/pwdbased.h"
+#include "wolfssl/wolfcrypt/hmac.h"
+#include "wolfssl/ssl.h"
+#include "wolfssl/internal.h"
+#include "wolfssl/wolfcrypt/aes.h"
+
+// #include "DebugTrace.h"
+
+ViwiFileEncryption::ViwiFileEncryption()
+{
+
+}
+
+ViwiFileEncryption::~ViwiFileEncryption()
+{
+
+}
+
+std::string ViwiFileEncryption::GeneratePwdBasedKey()
+{
+    // vin
+    std::string passwd = "WVWZZZ3CZFP400168";
+    // deviceid
+    std::string salt = "147258369123456";
+    char key[1024] = {0};
+    wc_PBKDF2((byte*)key, (byte*)passwd.c_str(), passwd.length(), (byte*)salt.c_str(), salt.length(), 500, 24, SHA256);
+    printf("GeneratePwdBasedKey->key:%s, length:%d\n", key, strlen(key));
+    return key;
+}
+
+std::string ViwiFileEncryption::GenerateHMACDigest(const byte* text,const byte* key)
+{
+    Hmac hmac;
+    char hmacDigest[SHA256_DIGEST_SIZE] = {0};
+    wc_HmacSetKey(&hmac, SHA256, key, strlen((const char*)key));
+    wc_HmacUpdate(&hmac, (byte*)text, strlen((const char*)text));
+    wc_HmacFinal(&hmac, (byte*)hmacDigest);
+
+    printf("hmacDigest:%s, length:%d\n", hmacDigest, strlen(hmacDigest));
+
+    return hmacDigest;
+}
+
+std::string ViwiFileEncryption::Encrypt(const byte* plain, const byte* iv, const byte* key)
+{
+    Aes enc;
+    char cipher[64] = {0};
+    int length = strlen((char*)plain);
+    while ((length % 16) != 0)
+    {
+        length ++;
+    }
+    printf("length: %d\n", length);
+
+    wc_AesSetKey(&enc, key, strlen((const char*)key), iv, AES_ENCRYPTION);
+    wc_AesCbcEncrypt(&enc, (byte*)cipher, plain, length);
+
+    printf("cipher:%s, length:%d\n", cipher, strlen(cipher));
+
+    return cipher;
+}
+
+std::string ViwiFileEncryption::Decrypt(const byte* cipher, const byte* iv, const byte* key)
+{
+    Aes dec;
+    char plain[32] = {0};
+    wc_AesSetKey(&dec, key, strlen((const char*)key), (byte*)iv, AES_DECRYPTION);
+    wc_AesCbcDecrypt(&dec, (byte*)plain, cipher, strlen((const char*)cipher));
+
+    printf("plain:%s, length:%d\n", plain, strlen(plain));
+
+    return plain;
+}
+
+int main()
+{
+    wolfSSL_Debugging_ON();
+    const byte iv[] = "1726947817184324";
+    byte plain[32] = {"abcdefghi"};
+
+    ViwiFileEncryption encrypt;
+    std::string key = encrypt.GeneratePwdBasedKey();
+    encrypt.GenerateHMACDigest(plain, (const byte*)key.c_str());
+    std::string cipher = encrypt.Encrypt(plain, iv, (const byte*)key.c_str());
+    encrypt.Decrypt((byte*)cipher.c_str(), iv, (const byte*)key.c_str());
+
+    byte plain1[64] = {"abcdefghidjdogjdlggjdglhdfogjdsfofdshfds"};
+    ViwiFileEncryption encrypt1;
+    std::string key1 = encrypt1.GeneratePwdBasedKey();
+    encrypt1.GenerateHMACDigest(plain1, (const byte*)key1.c_str());
+    std::string cipher1 = encrypt1.Encrypt(plain1, iv, (const byte*)key1.c_str());
+    encrypt1.Decrypt((byte*)cipher1.c_str(), iv, (const byte*)key1.c_str());
+}

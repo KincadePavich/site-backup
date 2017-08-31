@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE extension SYSTEM "ext-1.0.dtd">
+
+
+<extension engine="1.0">
+	<id>fancy_gravatar</id>
+	<title>Fancy gravatar</title>
+	<description>A PunBB extension that fetch gravatar for new users.</description>
+	<author>dimka.linux@gmail.com</author>
+	<version>1.2</version>
+
+	<!-- -->
+	<minversion>1.4</minversion>
+	<maxtestedon>1.4.2</maxtestedon>
+
+
+	<!-- -->
+	<hooks>
+
+		<!-- Fetch Gravatar on register -->
+		<hook id="rg_register_pre_login_redirect"><![CDATA[
+			if ($forum_config['o_regs_verify'] == '0') {
+				include $ext_info['path'].'/fancy_gravatar.inc.php';
+
+				try {
+					$fancy_gravatar = new Fancy_gravatar($new_uid, $email1);
+					$fancy_gravatar->fetch_gravatar();
+				} catch (Exception $exception) {}
+			}
+		]]></hook>
+
+
+		<!-- Fetch Gravatar on first login after verify be email -->
+		<hook id="li_login_pre_redirect"><![CDATA[
+			if ($group_id == FORUM_UNVERIFIED) {
+				// Get user email
+				$fancy_gravatar_query = array(
+					'SELECT'	=> 'u.email',
+					'FROM'		=> 'users AS u',
+					'WHERE'		=> 'u.id='.$user_id
+				);
+				$fancy_gravatar_query_result = $forum_db->query_build($fancy_gravatar_query) or error(__FILE__, __LINE__);
+				$fancy_gravatar_user_email = $forum_db->result($fancy_gravatar_query_result);
+
+				if (!empty($fancy_gravatar_user_email)) {
+					include $ext_info['path'].'/fancy_gravatar.inc.php';
+
+					try {
+						$fancy_gravatar = new Fancy_gravatar($user_id, $fancy_gravatar_user_email);
+						$fancy_gravatar->fetch_gravatar();
+					} catch (Exception $exception) {}
+				}
+			}
+		]]></hook>
+	</hooks>
+</extension>

@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <wolfssl/options.h>
+
+#include <stdlib.h>
+#include <unistd.h>
+#include <wolfssl/wolfcrypt/types.h>
+#include <wolfssl/ssl.h>
+#include "kaleb-cert.h"
+
+int main(int argc, char** argv)
+{
+    int ret;
+    int fail = 0;
+    WOLFSSL* ssl;
+    WOLFSSL_CTX* ctx;
+
+    wolfSSL_Init();
+    wolfSSL_Debugging_ON();
+
+    ctx = wolfSSL_CTX_new(wolfTLSv1_2_client_method());
+    if (ctx == NULL) {
+        printf("CTX creation failed\n");
+        return -1;
+    }
+
+    if ((ret = wolfSSL_CTX_load_verify_buffer(ctx, myCert,
+                        sizeof(myCert), SSL_FILETYPE_ASN1)) != SSL_SUCCESS) {
+        printf("load_verify_buffer returned err: %d\n", ret);
+        fail = 1;
+    }
+
+    if (fail != 1)
+        printf("Successfully loaded certificate\n");
+
+    wolfSSL_CTX_free(ctx);
+
+    return 0;
+
+}
