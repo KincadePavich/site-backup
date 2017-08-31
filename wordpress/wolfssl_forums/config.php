@@ -4,7 +4,7 @@ $db_type = 'mysqli';
 $db_host = 'localhost';
 $db_name = 'wolfsslpunbb';
 $db_username = 'kincade';
-$db_password = 'derp';
+$db_password = '<db_pwd>';
 $db_prefix = 'wolf_';
 $p_connect = false;
 
