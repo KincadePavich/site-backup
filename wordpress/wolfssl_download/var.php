@@ -37,18 +37,18 @@ $page3 = "http://test.wolfssl.com:8888/wordpress/wolfssl_download/thanks.php";
 $page4 = "http://test.wolfssl.com:8888/wordpress/wolfssl_download/download.php";
 
 /* yassl page locations */
-$yassl_download = "https://www.wolfssl.com/wolfSSL/download/downloadForm.php";
-$yassl_download_more = "https://www.wolfssl.com/wolfSSL/download/downloadMore.php";
-$yassl_cyassl_product = "https://wolfssl.com/wolfSSL/Products-wolfssl.html";
+$yassl_download = "/wordpress/wolfssl_download/downloadForm.php";
+$yassl_download_more = "/wordpress/wolfssl_download/downloadMoreForm.php";
+$yassl_cyassl_product = "/wordpress/products";
 $yassl_yasslews_product = "https://wolfssl.com/wolfSSL/Products-yassl-embedded-web-server.html";
-$yassl_docs = "https://wolfssl.com/wolfSSL/Docs.html";
-$yassl_cyassl_manual = "https://wolfssl.com/wolfSSL/Docs-wolfssl-manual-toc.html";
-$yassl_cyassl_api = "https://wolfssl.com/wolfSSL/Docs-wolfssl-manual-17-wolfssl-api-reference.html";
-$yassl_ssl_tutorial = "https://wolfssl.com/wolfSSL/Docs-wolfssl-manual-11-ssl-tutorial.html";
-$yassl_contact = "https://wolfssl.com/wolfSSL/Contact.html";
+$yassl_docs = "/wordpress/docs";
+$yassl_cyassl_manual = "/wordpress/docs/wolfssl-manual/";
+$yassl_cyassl_api = "/wordpress/docs/wolfssl-manual/ch17/";
+$yassl_ssl_tutorial = "/wordpress/docs/wolfssl-manual/ch11/";
+$yassl_contact = "/wordpress/contact/";
 
 /* misc strings */
-$copyright = "Copyright 2016 wolfSSL Inc.  All rights reserved.";
+$copyright = "Copyright 2017 wolfSSL Inc.  All rights reserved.";
 
 /* global variables */
 

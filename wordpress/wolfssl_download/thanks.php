@@ -1,3 +1,9 @@
+<?php
+define('WP_USE_THEMES', true);
+require($_SERVER['DOCUMENT_ROOT'] . '/wordpress/wp-load.php');
+get_header();
+?>
+
 <?php 
 
 session_start();
@@ -155,3 +161,5 @@ var google_conversion_value = 0;
 </div> <!-- End container -->
 </body>
 </html>
+
+<?php get_footer() ?>

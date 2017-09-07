@@ -1,8 +1,55 @@
 /*---------- TAGS ---------- */
-
+#menu-item-28820 a {
+    background: #1fbeca !important;
+    color: #fff !important;
+}
+#upperInfo a {
+    color: #c46715 !important;
+    font-size: 11pt;
+    line-height: 1.7;
+}
+#upperInfo a:hover {
+    color: #1fbeca !important;
+}
+#upperInfo p {
+    font-size: 11pt;
+    line-height: 1.7;
+}
+#upperInfo {
+    padding: 0 20px 20px;
+}
+#extraHeaderInfo li {
+    color: gray;
+    font-size: 11pt !important;
+    font-family: 'Droid Sans', sans-serif !important;
+}
+#extraHeaderInfo {
+    text-align: right !important;
+}
+#supportNav {
+    margin-right: 0 !important;
+}
+#extraHeaderInfo li a {
+    color: #c46715;
+}
+#extraHeaderInfo li a:hover {
+    color: #1fbeca;
+}
+.footerBox p {
+    font-size: 11pt !important;
+}
+h1 {
+    margin-bottom: 10px !important;
+}
+#TLS13 h1, #TLS13 h2, #footerProducts h2 {
+    font-weight: bold !important;
+    margin-bottom: 0 !important;
+}
+a {
+    text-decoration: none !important;
+}
 p {
-    margin: 10px !important;
-    text-align: left !important;
+    margin: 10px;
 }
 
 /* ------- TYPOGRAPHY ------- */
@@ -18,7 +65,7 @@ p {
 .intro_text{ color:#5F5E5F; }
 .intro_text a:link{ color: #CA651F; text-decoration:none;}
 .intro_text a:visited{ color: #CA651F; text-decoration:none;}
-.intro_text a:hover { color: #5E5E5F; text-decoration:underline;}
+.intro_text a:hover { color: #5E5E5F; text-decoration:none;}
 .intro_text a:active { color: #CA651F; text-decoration:none;}
 
 .subtext{
@@ -77,6 +124,8 @@ p {
 #formarea{ 
 	font-family: Verdana, Arial, Helvetica, sans-serif; 
 	text-align: left; 
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 label {
@@ -94,6 +143,7 @@ label {
 	background: #ccc;
 	padding: 5px 10px;
 	margin-top: 10px;
+    color: #000 !important;
 }
 
 input {
@@ -109,8 +159,9 @@ input {
 
 input.submit{
 	background: #aaa;
-	border: 1px solid #000;
-	width: 200px;
+    color: #000 !important;
+    border: 1px solid #000 !important;
+	max-width: 200px;
 	height: 40px;
 }
 
@@ -122,46 +173,43 @@ fieldset {
 	background: #f0f0f0;
 }
 
-#footer{
-    display: none !important;
-}
-
 #sweepstakes {
 	border: 1px solid #666;
 	text-align: left;
 	background-color: #CCFFCC;
 }
+.container {
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 0 !important;
+}
 @media screen and (max-width: 710px) {
-    .container {
-        width: 90% !important;
-        margin: 0 10px;
-        padding: 0;
-    }
     .center {
-        width: 90%;
+        width: 95%;
         margin: 0 auto;
     }
     fieldset {
         width: 100% !important;
         margin: 0 auto;
-        padding: 0;
+        padding: 20px;
+        box-sizing: border-box;
         min-width: 0;
     }
     textarea {
-        width: 90% !important;
+        width: 95% !important;
         margin: 5px 10px;
     }
     .textbody {
-        max-width: 90% !important;
+        max-width: 95% !important;
         word-wrap: break-word;
         word-break: break-all;
         margin: 15px;
     }
-    iframe {
-        width: 90% !important;
+    #extraHeaderInfo {
+        padding-right: 20px !important;
     }
 }
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 470px) {
     input.text, input.title {
         width: 80%;
         margin: 5px 10px;

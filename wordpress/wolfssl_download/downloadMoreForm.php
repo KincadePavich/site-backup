@@ -1,4 +1,10 @@
 <?php
+define('WP_USE_THEMES', true);
+require($_SERVER['DOCUMENT_ROOT'] . '/wordpress/wp-load.php');
+get_header();
+?>
+
+<?php
 
 session_start();
 
@@ -88,6 +94,12 @@ if ( isset($_SESSION['error_codes']) ) {
 <body>
 
 <div class="container">
+<div id="upperInfo">
+<h1 class="pageTitle">MORE DOWNLOADS</h1>
+<a id="dlRight" href="/wordpress/wolfssl_download/downloadForm.php">(View Primary Downloads)</a>
+<div class="push"></div>
+<p>Here you will find additional wolfSSL downloads. If you are downloading this as an evaulation and would like to discuss a commercial license, please <a href="/wordpress/contact/">Contact Us</a>. For downloads of wolfSSL and wolfSSL JNI, please see the <a href="/wordpress/wolfssl_download/downloadForm.php">Download Page</a>. If you need our original SSL/TLS library, yaSSL, please contact us at <a href="mailto:info@wolfssl.com">info@wolfssl.com</a>.</p>
+</div>
 
 <center>
 <div id="formarea" align="center">
@@ -272,3 +284,4 @@ END OF TERMS AND CONDITIONS
 </body>
 </html>
 
+<?php get_footer() ?>

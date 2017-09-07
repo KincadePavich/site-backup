@@ -1,4 +1,10 @@
 <?php
+define('WP_USE_THEMES', true);
+require($_SERVER['DOCUMENT_ROOT'] . '/wordpress/wp-load.php');
+get_header();
+?>
+
+<?php
 session_start();
 
 //error_reporting(E_ALL);
@@ -103,7 +109,12 @@ if ( isset($_SESSION['error_codes']) ) {
 <body>
 
 <div class="container">
-
+<div id="upperInfo">
+<h1 class="pageTitle">DOWNLOADS</h1>
+<a id="dlRight" href="/wordpress/wolfssl_download/downloadMoreForm.php">(View More Downloads)</a>
+<div class="push"></div>
+<p>Please <a href="/wordpress/contact/">Contact Us</a> if you are downloading this as an evaluation and need evaluation support. For additional downloads, including yaSSL (C++), and our Java SSL Provider, see the <a href="/wordpress/wolfssl_download/downloadMoreForm.php">More Downloads</a> page.</p>
+</div>
 <center>
 <div id="formarea" align="center">
 	<?php if(isset($error_codes)) {echo '<div class="error">Please fix the errors below</div>';} ?>
@@ -288,3 +299,5 @@ END OF TERMS AND CONDITIONS
 </div> <!-- End container -->
 </body>
 </html>
+
+<?php get_footer(); ?>

@@ -167,7 +167,6 @@ a {
 }
 a:visited {
     color: rgb(121, 121, 121);
-    text-decoration: underline;
 }
 a.class1 {
     color: rgb(0, 0, 0);
@@ -183,7 +182,6 @@ a.class1:hover {
 }
 a.class10 {
     color: rgb(25, 205, 216);
-    text-decoration: underline;
 }
 a.class10:visited {
     color: rgb(25, 205, 216);
@@ -290,7 +288,6 @@ a.class9:hover {
 }
 a:hover {
     color: rgb(66, 66, 66);
-    text-decoration: underline;
 }
 .bumper {
     font-size: 1px;
