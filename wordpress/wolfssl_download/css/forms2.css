@@ -165,7 +165,7 @@ input.submit{
 	height: 40px;
 }
 
-textarea { resize:none; width: 500px; }
+textarea { resize:none; max-width: 900px !important;width:90%;margin: 5px 10px;}
 input.submit:hover { background: #ccc; }
 
 fieldset {
@@ -181,7 +181,6 @@ fieldset {
 .container {
     margin: 0 auto;
     box-sizing: border-box;
-    padding: 0 !important;
 }
 @media screen and (max-width: 710px) {
     .center {
@@ -194,10 +193,6 @@ fieldset {
         padding: 20px;
         box-sizing: border-box;
         min-width: 0;
-    }
-    textarea {
-        width: 95% !important;
-        margin: 5px 10px;
     }
     .textbody {
         max-width: 95% !important;

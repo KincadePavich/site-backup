@@ -106,7 +106,6 @@ Click to read more.</p>
 				<ul class="lowNavList">
 					<a href="/wordpress/docs/wolfssl-manual/appendix-b/"><li>Algorithm/Protocol Reference</li></a>
 					<a href="/wordpress/docs/media/"><li>Presentations</li></a>
-					<a href="https://www.wolfssl.com/wolfSSL/Source/sourceCodeBrowser.php"><li>Source Code Browser</li></a>
                     <a href="/wordpress/directory/"><li>Site Directory</li></a>
 				</ul>
 			</div>

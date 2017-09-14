@@ -154,10 +154,6 @@ var google_conversion_value = 0;
 	</p>
 </span>
 <br/>
-<div id="footer" class="span-24 last">
-	<?php echo $copyright; ?>
-</div>
-<br/><br/>&nbsp;
 </div> <!-- End container -->
 </body>
 </html>
