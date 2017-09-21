@@ -20,8 +20,8 @@
 
 /** Manually inserted **/
 /** See https://codex.wordpress.org/Changing_The_Site_URL **/
-define('WP_SITEURL', 'http://test.wolfssl.com:8888/wordpress/');
-define('WP_HOME', 'http://test.wolfssl.com:8888/wordpress/');
+define('WP_SITEURL', 'http://test.wolfssl.com:8888/wordpress');
+define('WP_HOME', 'http://test.wolfssl.com:8888/wordpress');
 /** End manually inserted **/
 
 
